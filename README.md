@@ -36,162 +36,52 @@ Second phase of application for BeyondMachines internship
 -	old.beyondmachines.net 
 -	status.beyondmachines.net 
 -	yieldcat.beyondmachines.net 
--	yieldhog.beyondmachines.net 
--	damascian.beyondmachines.net 
--	www.beyondmachines.net 
--	clarity.beyondmachines.net 
--	beyondmachines.net 
--	trust.beyondmachines.net 
-[INF] Found 14 subdomains for beyondmachines.net in 4 seconds 228 milliseconds 
-   
- 
- 
--	Ping и Whois 
- 
+-	yieldhog.# BeyondMachines  
+## Second Phase of Application for BeyondMachines Internship
+
+---
+
+### Задача 1  
+**Пасивен скен на доменот `beyondmachines.net`, и пронаоѓање на колку DNS записи има во него.**
+
+Извршен е пасивен скен на доменот со помош на следниве алатки:
+
+- [Subdomain Finder Scan (15 May 2025)](https://subdomainfinder.c99.nl/scans/2025-05-15/beyondmachines.net)
+- [CRT.sh Certificate Transparency](https://crt.sh/?q=%25.beyondmachines.net)
+
+Опис:
+
+- Во првиот скен, пасивно се скрејпирани и побарани SSL/TLS сертификати за `subдомените`.
+- Вториот алат (сличен на `subfinder` и `amass`) собира `subдомени` од пасивни извори: search engines, CT логови и DNS историја.
+- Дополнително беа користени Kali алатки: `subfinder`, `sublist3r`, `dnsrecon`, `amass`.
+
+### Резултати:
+
+BeyondMachines има **13 subдомени**, од кои:
+
+- 5 имаат IP адреси.
+- 1 subдомен има **Cloudflare заштита**.
+
+**Активни subдомени:**
+
+- `challenge.beyondmachines.net` → IP адреса и хостиран  
+- `old.beyondmachines.net` → активен, потенцијално ризичен  
+- `trust.beyondmachines.net` → активен, Cloudflare заштита  
+- `beyondmachines.net` → активен  
+- `yieldcat.beyondmachines.net` → активен
+
+---
+
+### Дополнителен скен во Kali виртуелна машина:
+
+```bash
 ┌──(kali㉿kali)-[~] 
-└─$ ping -c 1 beyondmachines.net 
-ping beyondmachines.net (3.165.206.87) 56(84) bytes of data. 
-64 bytes from server-3-165-206-87.vie50.r.cloudfront.net (3.165.206.87): icmp_seq=1 ttl=241 time=27.1 ms 
- 
---- beyondmachines.net ping statistics --- 
-1 packets transmitted, 1 received, 0% packet loss, time 0ms 
-rtt min/avg/max/mdev = 27.097/27.097/27.097/0.000 ms 
-                                                                                                                                           
-┌──(kali㉿kali)-[~] 
-└─$ whois 3.165.206.87 
- 
-NetRange:       3.128.0.0 - 3.255.255.255 
-CIDR:           3.128.0.0/9 
-NetName:        AT-88-Z 
-NetHandle:      NET-3-128-0-0-1 
-Parent:         NET3 (NET-3-0-0-0-0) 
-NetType:        Direct Allocation 
-OriginAS:        
-Organization:   Amazon Technologies Inc. (AT-88-Z) 
-RegDate:        2018-06-25 
-Updated:        2018-09-13 
-Ref:            https://rdap.arin.net/registry/ip/3.128.0.0 
- 
- 
- 
-OrgName:        Amazon Technologies Inc. 
-OrgId:          AT-88-Z 
-Address:        410 Terry Ave N. 
-City:           Seattle 
-StateProv:      WA 
-PostalCode:     98109 
-Country:        US 
-RegDate:        2011-12-08 
-Updated:        2024-01-24 
-Comment:        All abuse reports MUST include: 
-Comment:        * src IP 
-Comment:        * dest IP (your IP) 
-Comment:        * dest port 
-Comment:        * Accurate date/timestamp and timezone of activity 
-Comment:        * Intensity/frequency (short log extracts) 
-Comment:        * Your contact details (phone and email) Without these we will be unable to identify the correct owner of the IP address at that point in time. 
-Ref:            https://rdap.arin.net/registry/entity/AT-88-Z 
- 
- 
-OrgTechHandle: ANO24-ARIN 
-OrgTechName:   Amazon EC2 Network Operations 
-OrgTechPhone:  +1-206-555-0000  
-OrgTechEmail:  amzn-noc-contact@amazon.com 
-OrgTechRef:    https://rdap.arin.net/registry/entity/ANO24-ARIN 
- 
-OrgRoutingHandle: ARMP-ARIN 
-OrgRoutingName:   AWS RPKI Management POC 
-OrgRoutingPhone:  +1-206-555-0000  
-OrgRoutingEmail:  aws-rpki-routing-poc@amazon.com 
-OrgRoutingRef:    https://rdap.arin.net/registry/entity/ARMP-ARIN 
- 
-OrgNOCHandle: AANO1-ARIN 
-OrgNOCName:   Amazon AWS Network Operations 
-OrgNOCPhone:  +1-206-555-0000  
-OrgNOCEmail:  amzn-noc-contact@amazon.com 
-OrgNOCRef:    https://rdap.arin.net/registry/entity/AANO1-ARIN 
- 
-OrgRoutingHandle: IPROU3-ARIN 
-OrgRoutingName:   IP Routing 
-OrgRoutingPhone:  +1-206-555-0000  
-OrgRoutingEmail:  aws-routing-poc@amazon.com 
-OrgRoutingRef:    https://rdap.arin.net/registry/entity/IPROU3-ARIN 
- 
-OrgAbuseHandle: AEA8-ARIN 
-OrgAbuseName:   Amazon EC2 Abuse 
-OrgAbusePhone:  +1-206-555-0000  
-OrgAbuseEmail:  trustandsafety@support.aws.com 
-OrgAbuseRef:    https://rdap.arin.net/registry/entity/AEA8-ARIN 
- 
-# end 
- 
- 
-# start 
- 
-NetRange:       3.165.0.0 - 3.165.255.255 
-CIDR:           3.165.0.0/16 
-NetName:        AMAZON-CF 
-NetHandle:      NET-3-165-0-0-1 
-Parent:         AT-88-Z (NET-3-128-0-0-1) 
-NetType:        Reallocated 
-OriginAS:        
-Organization:   Amazon.com, Inc. (AMAZON-4) 
-RegDate:        2024-01-17 
-Updated:        2024-01-17 
-Ref:            https://rdap.arin.net/registry/ip/3.165.0.0 
- 
- 
- 
-OrgName:        Amazon.com, Inc. 
-OrgId:          AMAZON-4 
-Address:        1918 8th Ave 
-City:           SEATTLE 
-StateProv:      WA 
-PostalCode:     98101-1244 
-Country:        US 
-RegDate:        1995-01-23 
-Updated:        2022-09-30 
-Ref:            https://rdap.arin.net/registry/entity/AMAZON-4 
- 
- 
-OrgNOCHandle: AANO1-ARIN 
-OrgNOCName:   Amazon AWS Network Operations 
-OrgNOCPhone:  +1-206-555-0000  
-OrgNOCEmail:  amzn-noc-contact@amazon.com 
-OrgNOCRef:    https://rdap.arin.net/registry/entity/AANO1-ARIN 
- 
-OrgRoutingHandle: IPROU3-ARIN 
-OrgRoutingName:   IP Routing 
-OrgRoutingPhone:  +1-206-555-0000  
-OrgRoutingEmail:  aws-routing-poc@amazon.com 
-OrgRoutingRef:    https://rdap.arin.net/registry/entity/IPROU3-ARIN 
- 
-OrgTechHandle: ANO24-ARIN 
-OrgTechName:   Amazon EC2 Network Operations 
-OrgTechPhone:  +1-206-555-0000  
-OrgTechEmail:  amzn-noc-contact@amazon.com 
-OrgTechRef:    https://rdap.arin.net/registry/entity/ANO24-ARIN 
- 
-OrgAbuseHandle: AEA8-ARIN 
-OrgAbuseName:   Amazon EC2 Abuse 
-OrgAbusePhone:  +1-206-555-0000  
-OrgAbuseEmail:  trustandsafety@support.aws.com 
-OrgAbuseRef:    https://rdap.arin.net/registry/entity/AEA8-ARIN 
- 
-OrgRoutingHandle: ARMP-ARIN 
-OrgRoutingName:   AWS RPKI Management POC 
-OrgRoutingPhone:  +1-206-555-0000  
-OrgRoutingEmail:  aws-rpki-routing-poc@amazon.com 
-OrgRoutingRef:    https://rdap.arin.net/registry/entity/ARMP-ARIN 
- 
-Заклучок: beyondmachines.net 
--	beyondmachines.net одговара на IP адресата 3.165.206.87. 
--	Cоодвествува на Amazon Technologies Inc., дел од Amazon AWS инфраструктурата. 
--	IP опсегот се користи за CloudFront – мрежа за дистрибуција на содржини (CDN), исто на Amazon. 
--	Reverse DNS покажува дека ова е CloudFront сервер со локација Виена, Австрија. 
--	Доменот beyondmachines.net е заштитен и сервисиран преку Amazon CloudFront. 
--	Контакт за злоупотреба (abuse) е исто така Amazon AWS.
- 
+└─$ subfinder -d beyondmachines.net -o subfinder_results.txt
+
+[INF] Current subfinder version v2.6.0 (outdated) 
+[INF] Loading provider config from the default location: /home/kali/.config/subfinder/provider-config.yaml 
+[INF] Enumerating subdomains for beyondmachines.net
+
  
 ┌──(kali㉿kali)-[~] 
 └─$ ping -c 1 yieldcat.beyondmachines.net 
@@ -576,3 +466,154 @@ OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE3970-ARIN
 
 Значи, да заклучиме: 
 - Да, сајтот бил "хакиран", бил прикачен и извршен shell,  имало напаѓачи од повеќе IP адреси (најмногу од 45.33.49.201 и 121.18.83.75), ранливостите беа пронајдени анализирајќи респонзивни кодови, endpoint-и и однесувањето на логовите. Администраторот мора да ги поништи пристапите/сесиите, да го исчисти сајтот комплетно и да ги поправи овие ранливости.
+
+To make your content look *clean and beautiful* on GitHub (especially in a Markdown `.md` file), I’ve formatted your text using Markdown code blocks and styling conventions. GitHub supports syntax highlighting and preserves formatting inside triple backticks, which is perfect for logs, terminal outputs, and your analysis.
+
+Here's your full content ready to paste into GitHub:
+
+---
+
+```bash
+┌──(kali㉿kali)-[~]
+└─$ whois 192.0.78.233
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+NetRange:       192.0.64.0 - 192.0.127.255
+CIDR:           192.0.64.0/18
+NetName:        AUTOMATTIC
+NetHandle:      NET-192-0-64-0-1
+Parent:         NET192 (NET-192-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS2635
+Organization:   Automattic, Inc (AUTOM-93)
+RegDate:        2012-11-20
+Updated:        2024-05-21
+Comment:        Geofeed https://as2635.network/geofeed.csv
+Ref:            https://rdap.arin.net/registry/ip/192.0.64.0
+
+OrgName:        Automattic, Inc
+OrgId:          AUTOM-93
+Address:        60 29th Street #343
+City:           San Francisco
+StateProv:      CA
+PostalCode:     94110
+Country:        US
+RegDate:        2011-10-05
+Updated:        2023-08-11
+Ref:            https://rdap.arin.net/registry/entity/AUTOM-93
+
+OrgTechHandle: NOC12276-ARIN
+OrgTechName:   NOC
+OrgTechPhone:  +1-877-273-8550
+OrgTechEmail:  ipadmin@automattic.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/NOC12276-ARIN
+
+OrgNOCHandle: NOC12276-ARIN
+OrgNOCName:   NOC
+OrgNOCPhone:  +1-877-273-8550
+OrgNOCEmail:  ipadmin@automattic.com
+OrgNOCRef:    https://rdap.arin.net/registry/entity/NOC12276-ARIN
+
+OrgAbuseHandle: ABUSE3970-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-877-273-8550
+OrgAbuseEmail:  abuse@automattic.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE3970-ARIN
+```
+
+---
+
+### 📌 Заклучок
+
+`old.beyondmachines.net`
+
+* одговара на IP адресата `192.0.78.233`
+* Регистрирана е на **Automattic, Inc.**, познати по **WordPress.com**
+* IP опсегот `192.0.64.0/18` е директно доделен
+* Whois содржи и технички и abuse контакти
+* Сабдоменот е **активен** и **хостиран** од Automattic
+* Се чини дека е архивирана/постара верзија на BeyondMachines
+
+---
+
+### ❌ Што не треба да е онлајн?
+
+> Од безбедносна гледна точка, следниве работи не треба да бидат јавно достапни:
+
+* Административни интерфејси и контрол панели (само преку внатрешна мрежа/VPN)
+* Интерни сервиси и бази на податоци со осетливи информации
+* Backup и staging околини што не се продуктивни (можат да содржат реални податоци и конфигурации)
+
+---
+
+### ✅ Што треба да направи администраторот?
+
+* Ревизија на ризични sub-домени
+* SSL + CDN за заштита на јавните поддомени (пример: Cloudflare)
+* Мониторинг и редовни updates
+* Укинување или заштита на заборавени субдомени
+* Користење на пасивни алати за набљудување
+
+---
+
+## 🛠️ Задача 2: Преглед на логови
+
+> Од логовите, видлива е малициозна активност од повеќе IP адреси и геолокации.
+
+### Видови напади:
+
+* 🕵 Reconnaissance
+* 🧬 SQL Injection Attempts
+* 🗃️ Local File Inclusion, Remote Code Execution
+* 🔐 Brute-force login attempts
+* 💻 `shell.php` - за целосен remote control
+* 🛑 Unauthorized admin access (`/admin/dashboard.php`, `/admin/backup.php`, `/admin/users.php`)
+
+### Примери на IP адреси:
+
+* `45.33.49.201` — US
+* `121.18.83.75` — China
+* `185.173.35.19` — Europe/MENA
+* `213.87.160.214` — Russia
+* `198.51.100.73` — Reserved/Test IP
+* `104.28.97.142` — Cloudflare
+* `93.184.216.34` — US
+
+---
+
+### ❓ Дали сајтот беше хакиран?
+
+✅ Да. Нападот беше успешен.
+**Докази:**
+
+* `/admin/login.php` со `302` redirect → успешен логин
+* Пристап до админ панели (`settings.php`, `uploads.php`)
+* Прикачен `shell.php`
+* Повеќекратни POST барања до `shell.php` со payload-и со растечки големини
+
+---
+
+### 👀 Анализа на логови
+
+Прво визуелна анализа, потоа помош од A.I. за **grep** команди:
+
+```bash
+grep -Ei "(\?id=|union.*select|1=1|--|%27)" access_log.csv
+grep "\.\./" access_log.csv
+grep " 404 " access_log.csv
+grep " 403 " access_log.csv
+grep "/login" access_log.csv
+grep -Ei "curl|wget|python|bot" access_log.csv
+```
+
+---
+
