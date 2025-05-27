@@ -7,11 +7,13 @@
 
 **Цел:** Пасивен скен на доменот `beyondmachines.net` и пронаоѓање на број на DNS записи.
 
+
 **Алатки користени:**
 
 - [Subdomain Finder Scan (15 May 2025)](https://subdomainfinder.c99.nl/scans/2025-05-15/beyondmachines.net)
 - [CRT.sh Certificate Transparency](https://crt.sh/?q=%25.beyondmachines.net)
 - Kali Linux алатки: `subfinder`, `sublist3r`, `dnsrecon`, `amass`
+
 
 #### Опис:
 - Скенирани SSL/TLS сертификати за subдомените.
@@ -24,6 +26,7 @@
   - Од нив, **5 имаат IP адреси**
   - **1 има Cloudflare заштита**
 
+
 **Активни субдомени:**
 
 - `challenge.beyondmachines.net` - IP адреса, хостиран
@@ -31,6 +34,7 @@
 - `trust.beyondmachines.net` - Cloudflare
 - `beyondmachines.net` - активен
 - `yieldcat.beyondmachines.net` - активен
+
 
 ### Скенови во Kali виртуелна машина
 
@@ -46,6 +50,7 @@ whois 216.24.57.1
 **yieldcat.beyondmachines.net:**
 - IP: `216.24.57.1`
 - Хостирано од: Render, San Francisco, US
+
 
 ```bash
 ping old.beyondmachines.net
@@ -64,6 +69,7 @@ whois 192.0.78.233
 - Интерни сервиси/датабази
 - Backup или test околини
 
+
 **Администратор треба да:**
 - Ревидира ризични subдомени
 - Користи SSL, Cloudflare
@@ -72,9 +78,11 @@ whois 192.0.78.233
 - Користи пасивни скени
 
 
+
 ## Задача 2 – Анализа на логови
 
 **Заклучок:** Сајтот бил **успешно хакиран**.
+
 
 ### Типови на напади:
 
@@ -84,6 +92,7 @@ whois 192.0.78.233
 - Brute-force login
 - Прикачен `shell.php` за remote control
 - Access до admin панели
+
 
 ### IP адреси вклучени во нападот:
 
